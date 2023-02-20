@@ -4,6 +4,7 @@ import Categories from '../components/Categories';
 import Sort from '../components/Sort';
 import PizzaSkeleton from '../components/PizzaBlock/Skeleton';
 import PizzaBlock from '../components/PizzaBlock';
+import Card from './Card';
 
 const Home = () => {
   const [items, setItems] = React.useState([]);
@@ -18,10 +19,11 @@ const Home = () => {
         setItems(pizzas);
         setIsLoading(false);
       });
+    window.scrollTo(0, 0);
   }, []);
 
   return (
-    <>
+    <div className="container">
       <div className="content__top">
         <Categories />
         <Sort />
@@ -41,7 +43,7 @@ const Home = () => {
               />
             ))}
       </div>
-    </>
+    </div>
   );
 };
 
